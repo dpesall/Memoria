@@ -166,7 +166,7 @@ const Sandbox = () => {
     }
 
     const hasSelectedSettings = () => {
-        return !(selectedBook === null || selectedChapter === null && selectedMode === null);
+        return !(selectedBook === null || selectedChapter === null || selectedMode === null);
     }
 
     const [wordsCorrect, setWordsCorrect] = useState(0);
