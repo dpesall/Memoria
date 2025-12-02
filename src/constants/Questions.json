@@ -1,0 +1,663 @@
+{
+    "New Testament Stories": {
+        "questions": [
+            {
+                "topic": "New Testament Stories",
+                "question": "What does Simon Peter do for a living before he becomes an apostle?",
+                "answers": ["Fisherman", ["Fisherman", "Baker", "Tax Collector", "Carpenter"]]
+            },
+            {
+                "topic": "New Testament Stories",
+                "question": "Where was Jesus born?",
+                "answers": ["Bethlehem", ["Bethlehem", "Nazareth", "Jerusalem", "Capernaum"]]
+            },
+            {
+                "topic": "New Testament Stories",
+                "question": "Who betrays Jesus to the authorities?",
+                "answers": ["Judas Iscariot", ["Judas Iscariot", "Peter", "John", "Thomas"]]
+            },
+            {
+                "topic": "New Testament Stories",
+                "question": "What miracle does Jesus perform at the wedding in Cana?",
+                "answers": ["Turns water into wine", ["Turns water into wine", "Feeds 5000", "Heals the blind man", "Walks on water"]]
+            },
+            {
+                "topic": "New Testament Stories",
+                "question": "Who climbs a sycamore tree to see Jesus?",
+                "answers": ["Zacchaeus", ["Zacchaeus", "Nicodemus", "Peter", "Matthew"]]
+            },
+            {
+                "topic": "New Testament Stories",
+                "question": "Who is the Roman governor who sentences Jesus to be crucified?",
+                "answers": ["Pontius Pilate", ["Pontius Pilate", "Herod", "Felix", "Agrippa"]]
+            },
+            {
+                "topic": "New Testament Stories",
+                "question": "Who is the first person to see Jesus after His resurrection?",
+                "answers": ["Mary Magdalene", ["Mary Magdalene", "Peter", "John", "Mary the mother of Jesus"]]
+            },
+            {
+                "topic": "New Testament Stories",
+                "question": "What does Jesus feed 5000 people with?",
+                "answers": ["Five loaves and two fish", ["Five loaves and two fish", "Fish 'n Chips", "Manna from heaven", "Water and bread"]]
+            },
+            {
+                "topic": "New Testament Stories",
+                "question": "What does Jesus do during a storm on the Sea of Galilee?",
+                "answers": ["Calms the storm", ["Calms the storm", "Sings a song", "Sails the boat", "Prays on the shore"]]
+            },
+            {
+                "topic": "New Testament Stories",
+                "question": "What occupation does Matthew have before following Jesus?",
+                "answers": ["Tax Collector", ["Tax Collector", "Fisherman", "Carpenter", "Soldier"]]
+            },
+            {
+                "topic": "New Testament Stories",
+                "question": "Who does Jesus raise from the dead after four days?",
+                "answers": ["Lazarus", ["Lazarus", "Thomas", "Herod", "Samson"]]
+            },
+            {
+                "topic": "New Testament Stories",
+                "question": "Who denies knowing Jesus three times before the rooster crows?",
+                "answers": ["Peter", ["Peter", "Judas", "John", "James"]]
+            },
+            {
+                "topic": "New Testament Stories",
+                "question": "Where does Jesus go to pray before His arrest?",
+                "answers": ["Gethsemane", ["Gethsemane", "Bethany", "Jerusalem", "Galilee"]]
+            },
+            {
+                "topic": "New Testament Stories",
+                "question": "Who asks Pilate for Jesus' body and lays it in his own tomb?",
+                "answers": ["Joseph of Arimathea", ["Joseph of Arimathea", "Nicodemus", "Peter", "John"]]
+            },
+            {
+                "topic": "New Testament Stories",
+                "question": "Who baptizes Jesus?",
+                "answers": ["John the Baptist", ["John the Baptist", "Peter", "James", "Andrew"]]
+            },
+            {
+                "topic": "New Testament Stories",
+                "question": "Who helps Jesus carry His cross?",
+                "answers": ["Simon of Cyrene", ["Simon of Cyrene", "John", "Peter", "James"]]
+            },
+            {
+                "topic": "New Testament Stories",
+                "question": "Where is Paul shipwrecked on his way to Rome?",
+                "answers": ["Malta", ["Malta", "Crete", "Cyprus", "Rhodes"]]
+            },
+            {
+                "topic": "New Testament Stories",
+                "question": "What town is Jesus from?",
+                "answers": ["Nazareth", ["Nazareth", "Bethlehem", "Jerusalem", "Capernaum"]]
+            },
+            {
+                "topic": "New Testament Stories",
+                "question": "What type of tree does Zacchaeus climb to see Jesus?",
+                "answers": ["Sycamore", ["Sycamore", "Olive", "Fig", "Cedar"]]
+            },
+            {
+                "topic": "New Testament Stories",
+                "question": "What does Jesus ride into Jerusalem on?",
+                "answers": ["Donkey", ["Donkey", "Horse", "Camel", "Chariot"]]
+            },
+            {
+                "topic": "New Testament Stories",
+                "question": "What does Jesus do to the fig tree that has no fruit?",
+                "answers": ["Curses it", ["Curses it", "Blesses it", "Plants it", "Waters it"]]
+            },
+            {
+                "topic": "New Testament Stories",
+                "question": "What body of water does Jesus walk on?",
+                "answers": ["Sea of Galilee", ["Sea of Galilee", "Red Sea", "Jordan River", "Mediterranean Sea"]]
+            },
+            {
+                "topic": "New Testament Stories",
+                "question": "What do the wise men follow to find Jesus?",
+                "answers": ["A star", ["A star", "A map", "A shepherd", "A voice"]]
+            },
+            {
+                "topic": "New Testament Stories",
+                "question": "What does Jesus do to the servant's ear that Peter cut off?",
+                "answers": ["Heals it", ["Heals it", "Ignores it", "Blesses it", "Curses it"]]
+            },
+            {
+                "topic": "New Testament Stories",
+                "question": "What does Peter find in the fish's mouth to pay the temple tax?",
+                "answers": ["A coin", ["A coin", "A pearl", "A ring", "A gem"]]
+            },
+            {
+                "topic": "New Testament Stories",
+                "question": "What is the name of the pool where Jesus heals the paralyzed man?",
+                "answers": ["Bethesda", ["Bethesda", "Siloam", "Gihon", "Jordan"]]
+            }
+        ]
+    },
+    "Old Testament Stories": {
+        "questions": [
+            {
+                "topic": "Old Testament Stories",
+                "question": "What does Noah build to survive the flood?",
+                "answers": ["An ark", ["An ark", "A tower", "A wall", "A house"]]
+            },
+            {
+                "topic": "Old Testament Stories",
+                "question": "What is the sign of God's covenant with Noah?",
+                "answers": ["A rainbow", ["A rainbow", "A dove", "A star", "A tree"]]
+            },
+            {
+                "topic": "Old Testament Stories",
+                "question": "What city is destroyed by fire and brimstone along with Gomorrah?",
+                "answers": ["Sodom", ["Sodom", "Jericho", "Nineveh", "Babylon"]]
+            },
+            {
+                "topic": "Old Testament Stories",
+                "question": "What does Moses part to lead the Israelites out of Egypt?",
+                "answers": ["The Red Sea", ["The Red Sea", "The Jordan River", "The Nile River", "The Dead Sea"]]
+            },
+            {
+                "topic": "Old Testament Stories",
+                "question": "What does David use to defeat Goliath?",
+                "answers": ["A sling and a stone", ["A sling and a stone", "A sword", "A spear", "A bow and arrow"]]
+            },
+            {
+                "topic": "Old Testament Stories",
+                "question": "What does Solomon ask God for?",
+                "answers": ["Wisdom", ["Wisdom", "Riches", "Power", "Long life"]]
+            },
+            {
+                "topic": "Old Testament Stories",
+                "question": "What does God create on the first day?",
+                "answers": ["Light", ["Light", "Sky", "Land", "Plants"]]
+            },
+            {
+                "topic": "Old Testament Stories",
+                "question": "What animal speaks to Balaam?",
+                "answers": ["A donkey", ["A donkey", "A lion", "A snake", "An eagle"]]
+            },
+            {
+                "topic": "Old Testament Stories",
+                "question": "What does Lot's wife turn into when she looks back at Sodom?",
+                "answers": ["Salt", ["Salt", "Stone", "Dust", "Brimstone"]]
+            },
+            {
+                "topic": "Old Testament Stories",
+                "question": "What river does Naaman wash in to be healed of leprosy?",
+                "answers": ["The Jordan River", ["The Jordan River", "The Nile River", "The Euphrates River", "The Tigris River"]]
+            },
+            {
+                "topic": "Old Testament Stories",
+                "question": "What does Daniel interpret for King Belshazzar?",
+                "answers": ["Writing on a wall", ["Writing on a wall", "A dream", "A prophecy", "A vision"]]
+            },
+            {
+                "topic": "Old Testament Stories",
+                "question": "What does God send to plague Egypt first?",
+                "answers": ["Turning water into blood", ["Turning water into blood", "Locusts", "Frogs", "Darkness"]]
+            },
+            {
+                "topic": "Old Testament Stories",
+                "question": "What does Gideon use to test God's will?",
+                "answers": ["A fleece", ["A fleece", "A rod", "A stone", "A bowl of water"]]
+            },
+            {
+                "topic": "Old Testament Stories",
+                "question": "What does King Nebuchadnezzar demand to be interpreted?",
+                "answers": ["A dream", ["A dream", "A vision", "A prophecy", "A sign"]]
+            },
+            {
+                "topic": "Old Testament Stories",
+                "question": "What does Ruth glean in Boaz's field?",
+                "answers": ["Grain", ["Grain", "Fruits", "Vegetables", "Flowers"]]
+            }
+        ]
+    },
+    "Geography": {
+        "questions": [
+            {
+                "topic": "Geography",
+                "question": "What river did John the Baptist baptize Jesus in?",
+                "answers": ["Jordan River", ["Jordan River", "Nile River", "Euphrates River", "Tigris River"]]
+            },
+            {
+                "topic": "Geography",
+                "question": "What city was Jesus born in?",
+                "answers": ["Bethlehem", ["Bethlehem", "Nazareth", "Jerusalem", "Capernaum"]]
+            },
+            {
+                "topic": "Geography",
+                "question": "Where did Moses receive the Ten Commandments?",
+                "answers": ["Mount Sinai", ["Mount Sinai", "Mount Zion", "Mount Carmel", "Mount Horeb"]]
+            },
+            {
+                "topic": "Geography",
+                "question": "What city did Jonah try to flee to instead of going to Nineveh?",
+                "answers": ["Tarshish", ["Tarshish", "Joppa", "Tyre", "Sidon"]]
+            },
+            {
+                "topic": "Geography",
+                "question": "What sea did Moses part to lead the Israelites out of Egypt?",
+                "answers": ["Red Sea", ["Red Sea", "Dead Sea", "Mediterranean Sea", "Sea of Galilee"]]
+            },
+            {
+                "topic": "Geography",
+                "question": "What city was Paul traveling to when he encountered Jesus?",
+                "answers": ["Damascus", ["Damascus", "Jerusalem", "Antioch", "Ephesus"]]
+            },
+            {
+                "topic": "Geography",
+                "question": "What city did Nehemiah help to rebuild?",
+                "answers": ["Jerusalem", ["Jerusalem", "Samaria", "Hebron", "Bethlehem"]]
+            },
+            {
+                "topic": "Geography",
+                "question": "Where was Paul shipwrecked on his way to Rome?",
+                "answers": ["Malta", ["Malta", "Crete", "Cyprus", "Rhodes"]]
+            },
+            {
+                "topic": "Geography",
+                "question": "What city is known for the walls that fell after the Israelites marched around them?",
+                "answers": ["Jericho", ["Jericho", "Ai", "Gibeon", "Hebron"]]
+            },
+            {
+                "topic": "Geography",
+                "question": "What body of water did Jesus walk on?",
+                "answers": ["Sea of Galilee", ["Sea of Galilee", "Red Sea", "Jordan River", "Dead Sea"]]
+            },
+            {
+                "topic": "Geography",
+                "question": "What island was John exiled to when he wrote Revelation?",
+                "answers": ["Patmos", ["Patmos", "Crete", "Malta", "Cyprus"]]
+            },
+            {
+                "topic": "Geography",
+                "question": "What city did Abraham originally come from?",
+                "answers": ["Ur", ["Ur", "Haran", "Canaan", "Bethel"]]
+            },
+            {
+                "topic": "Geography",
+                "question": "What valley did David fight Goliath in?",
+                "answers": ["Valley of Elah", ["Valley of Elah", "Valley of Jezreel", "Valley of Achor", "Valley of Rephaim"]]
+            },
+            {
+                "topic": "Geography",
+                "question": "Where did Elijah challenge the prophets of Baal?",
+                "answers": ["Mount Carmel", ["Mount Carmel", "Mount Sinai", "Mount Zion", "Mount Horeb"]]
+            },
+            {
+                "topic": "Geography",
+                "question": "Where did Jacob have his dream of a ladder reaching to heaven?",
+                "answers": ["Bethel", ["Bethel", "Hebron", "Beersheba", "Haran"]]
+            },
+            {
+                "topic": "Geography",
+                "question": "Where did Moses strike the rock to bring forth water?",
+                "answers": ["Horeb", ["Horeb", "Sinai", "Meribah", "Kadesh"]]
+            },
+            {
+                "topic": "Geography",
+                "question": "Where was the Temple built by Solomon located?",
+                "answers": ["Jerusalem", ["Jerusalem", "Samaria", "Bethlehem", "Hebron"]]
+            },
+            {
+                "topic": "Geography",
+                "question": "What city did Lot escape from before its destruction?",
+                "answers": ["Sodom", ["Sodom", "Gomorrah", "Jericho", "Nineveh"]]
+            },
+            {
+                "topic": "Geography",
+                "question": "Where did Jonah preach repentance?",
+                "answers": ["Nineveh", ["Nineveh", "Tarshish", "Joppa", "Sidon"]]
+            },
+            {
+                "topic": "Geography",
+                "question": "Where did God confuse the languages of the people building a tower?",
+                "answers": ["Babel", ["Babel", "Sodom", "Gomorrah", "Jericho"]]
+            },
+            {
+                "topic": "Geography",
+                "question": "Where did Abraham prepare to sacrifice Isaac?",
+                "answers": ["Mount Moriah", ["Mount Moriah", "Mount Sinai", "Mount Carmel", "Mount Zion"]]
+            },
+            {
+                "topic": "Geography",
+                "question": "What city did the Israelites defeat after marching around it for seven days?",
+                "answers": ["Jericho", ["Jericho", "Ai", "Gibeon", "Hebron"]]
+            },
+            {
+                "topic": "Geography",
+                "question": "Where did Jesus turn water into wine?",
+                "answers": ["Cana", ["Cana", "Nazareth", "Bethlehem", "Jerusalem"]]
+            },
+            {
+                "topic": "Geography",
+                "question": "What city was destroyed by fire and brimstone along with Sodom?",
+                "answers": ["Gomorrah", ["Gomorrah", "Jericho", "Nineveh", "Babylon"]]
+            },
+            {
+                "topic": "Geography",
+                "question": "What mountain did Noah's ark come to rest on?",
+                "answers": ["Mount Ararat", ["Mount Ararat", "Mount Sinai", "Mount Moriah", "Mount Carmel"]]
+            },
+            {
+                "topic": "Geography",
+                "question": "What city did Paul write many of his letters to while in prison?",
+                "answers": ["Rome", ["Rome", "Jerusalem", "Ephesus", "Corinth"]]
+            },
+            {
+                "topic": "Geography",
+                "question": "Where was David anointed king over Israel?",
+                "answers": ["Hebron", ["Hebron", "Jerusalem", "Bethlehem", "Gibeah"]]
+            },
+            {
+                "topic": "Geography",
+                "question": "What region is known for its fertile land and was given to Joseph's family in Egypt?",
+                "answers": ["Goshen", ["Goshen", "Canaan", "Moab", "Philistia"]]
+            },
+            {
+                "topic": "Geography",
+                "question": "What city did Daniel live in during the exile?",
+                "answers": ["Babylon", ["Babylon", "Jerusalem", "Nineveh", "Susa"]]
+            }
+        ]
+    },
+    "People": {
+        "questions": [
+            {
+                "topic": "People",
+                "question": "What is the name of the mother of Jesus?",
+                "answers": ["Mary", ["Mary", "Martha", "Elizabeth", "Ruth"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who became king after King David?",
+                "answers": ["Solomon", ["Solomon", "Saul", "Rehoboam", "Jeroboam"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was made king of Judah at seven years of age after having been hidden for six years?",
+                "answers": ["Joash", ["Joash", "Josiah", "Manasseh", "Hezekiah"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who is known for building an ark to survive the great flood?",
+                "answers": ["Noah", ["Noah", "Abraham", "Moses", "Jacob"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was thrown into a den of lions but was unharmed?",
+                "answers": ["Daniel", ["Daniel", "David", "Elijah", "Jeremiah"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the first man created by God?",
+                "answers": ["Adam", ["Adam", "Noah", "Abel", "Seth"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who interpreted dreams for the Pharaoh in Egypt?",
+                "answers": ["Joseph", ["Joseph", "Moses", "Aaron", "Joshua"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who led the Israelites out of Egypt?",
+                "answers": ["Moses", ["Moses", "Aaron", "Joshua", "Caleb"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was swallowed by a great fish or whale?",
+                "answers": ["Jonah", ["Jonah", "Job", "Daniel", "Samuel"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the giant slain by David with a sling and a stone?",
+                "answers": ["Goliath", ["Goliath", "Saul", "Absalom", "Samson"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who is considered the father of many nations?",
+                "answers": ["Abraham", ["Abraham", "Isaac", "Jacob", "Esau"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the strongest man in the Bible, known for his long hair?",
+                "answers": ["Samson", ["Samson", "Solomon", "David", "Elijah"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the first king of Israel?",
+                "answers": ["Saul", ["Saul", "David", "Solomon", "Samuel"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the wife of Isaac and the mother of Jacob and Esau?",
+                "answers": ["Rebekah", ["Rebekah", "Rachel", "Leah", "Sarah"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was taken up to heaven in a whirlwind?",
+                "answers": ["Elijah", ["Elijah", "Elisha", "Enoch", "Moses"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the tax collector who climbed a sycamore tree to see Jesus?",
+                "answers": ["Zacchaeus", ["Zacchaeus", "Matthew", "Nicodemus", "Simon"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who is the author of the majority of the New Testament letters?",
+                "answers": ["Paul", ["Paul", "Peter", "John", "James"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the first martyr of the Christian church?",
+                "answers": ["Stephen", ["Stephen", "Peter", "James", "Paul"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was known for her hospitality to Jesus and is the sister of Lazarus?",
+                "answers": ["Martha", ["Martha", "Mary Magdalene", "Salome", "Joanna"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the last judge of Israel and anointed the first two kings?",
+                "answers": ["Samuel", ["Samuel", "Eli", "Gideon", "Deborah"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the Queen of Persia who saved her people from destruction?",
+                "answers": ["Esther", ["Esther", "Ruth", "Bathsheba", "Sarah"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the apostle that denied Jesus three times?",
+                "answers": ["Peter", ["Peter", "Judas", "John", "Andrew"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who is the woman who turned into a pillar of salt?",
+                "answers": ["Lot's wife", ["Lot's wife", "Sarah", "Rebekah", "Hagar"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the cupbearer to the king and led the rebuilding of Jerusalem’s walls?",
+                "answers": ["Nehemiah", ["Nehemiah", "Ezra", "Zerubbabel", "Joshua"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the prophet that confronted King Ahab and Queen Jezebel?",
+                "answers": ["Elijah", ["Elijah", "Elisha", "Isaiah", "Jeremiah"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the prophet swallowed by a great fish?",
+                "answers": ["Jonah", ["Jonah", "Hosea", "Amos", "Micah"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who interpreted the writing on the wall for King Belshazzar?",
+                "answers": ["Daniel", ["Daniel", "Joseph", "Ezekiel", "Isaiah"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the brother of Moses and his spokesperson?",
+                "answers": ["Aaron", ["Aaron", "Joshua", "Caleb", "Eleazar"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the Moabite woman who became an ancestor of King David?",
+                "answers": ["Ruth", ["Ruth", "Esther", "Naomi", "Tamar"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the first high priest of Israel?",
+                "answers": ["Aaron", ["Aaron", "Moses", "Joshua", "Caleb"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the wife of Abraham and the mother of Isaac?",
+                "answers": ["Sarah", ["Sarah", "Hagar", "Rebekah", "Rachel"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the judge that led Israel with the help of Barak?",
+                "answers": ["Deborah", ["Deborah", "Jael", "Gideon", "Jephthah"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the husband of Mary, the mother of Jesus?",
+                "answers": ["Joseph", ["Joseph", "Zacharias", "Simon", "Andrew"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the disciple who walked on water with Jesus?",
+                "answers": ["Peter", ["Peter", "James", "John", "Andrew"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the Pharisee who visited Jesus at night?",
+                "answers": ["Nicodemus", ["Nicodemus", "Caiaphas", "Gamaliel", "Joseph of Arimathea"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the woman who anointed Jesus' feet with perfume?",
+                "answers": ["Mary Magdalene", ["Mary Magdalene", "Martha", "Joanna", "Susanna"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the king that decreed a census which brought Joseph and Mary to Bethlehem?",
+                "answers": ["Caesar Augustus", ["Caesar Augustus", "Herod", "Pilate", "Nero"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the disciple known for doubting Jesus' resurrection until he saw Him?",
+                "answers": ["Thomas", ["Thomas", "Peter", "James", "John"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the Queen who visited Solomon to test his wisdom?",
+                "answers": ["Queen of Sheba", ["Queen of Sheba", "Queen Esther", "Queen Jezebel", "Queen Vashti"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the second king of Israel?",
+                "answers": ["David", ["David", "Saul", "Solomon", "Samuel"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the prophet who confronted David about his sin with Bathsheba?",
+                "answers": ["Nathan", ["Nathan", "Samuel", "Gad", "Elijah"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the Roman governor who presided over the trial of Jesus?",
+                "answers": ["Pontius Pilate", ["Pontius Pilate", "Herod", "Caiaphas", "Felix"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the prophet who prophesied the coming of the Messiah and prepared the way for Him?",
+                "answers": ["John the Baptist", ["John the Baptist", "Isaiah", "Jeremiah", "Elijah"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the disciple known for bringing his brother Peter to Jesus?",
+                "answers": ["Andrew", ["Andrew", "John", "James", "Philip"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the woman who helped the Israelite spies in Jericho?",
+                "answers": ["Rahab", ["Rahab", "Ruth", "Deborah", "Jael"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the firstborn son of Isaac and Rebekah?",
+                "answers": ["Esau", ["Esau", "Jacob", "Joseph", "Judah"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the father of John the Baptist?",
+                "answers": ["Zechariah", ["Zechariah", "Joseph", "Simeon", "Nicodemus"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the disciple who replaced Judas Iscariot?",
+                "answers": ["Matthias", ["Matthias", "Barnabas", "Silas", "Timothy"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the prophet who anointed the first king of Israel?",
+                "answers": ["Samuel", ["Samuel", "Nathan", "Gad", "Elijah"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the prophet who foretold the destruction of Nineveh?",
+                "answers": ["Nahum", ["Nahum", "Jonah", "Micah", "Amos"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the Babylonian king who threw Shadrach, Meshach, and Abednego into the fiery furnace?",
+                "answers": ["Nebuchadnezzar", ["Nebuchadnezzar", "Darius", "Cyrus", "Belshazzar"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the disciple known as 'the one whom Jesus loved'?",
+                "answers": ["John", ["John", "Peter", "James", "Andrew"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the Moabite widow who became the great-grandmother of David?",
+                "answers": ["Ruth", ["Ruth", "Naomi", "Orpah", "Bathsheba"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the disciple who was a tax collector before following Jesus?",
+                "answers": ["Matthew", ["Matthew", "Peter", "John", "James"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the man in the Old Testament known for his patience in suffering?",
+                "answers": ["Job", ["Job", "Noah", "Abraham", "Moses"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the Jewish queen who saved her people from Haman's plot?",
+                "answers": ["Esther", ["Esther", "Ruth", "Deborah", "Sarah"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the son of Saul who became a close friend of David?",
+                "answers": ["Jonathan", ["Jonathan", "Ishbosheth", "Abner", "Absalom"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the prophet who saw the vision of dry bones coming to life?",
+                "answers": ["Ezekiel", ["Ezekiel", "Isaiah", "Jeremiah", "Daniel"]]
+            },
+            {
+                "topic": "People",
+                "question": "Who was the woman who falsely accused Joseph of assaulting her?",
+                "answers": ["Potiphar's wife", ["Potiphar's wife", "Delilah", "Jezebel", "Athaliah"]]
+            }
+        ]
+    }
+}
