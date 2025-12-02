@@ -1,55 +1,59 @@
-import { StyleSheet, Dimensions } from 'react-native';
-
-const { width, height } = Dimensions.get('window');
-const buttonWidth = width * 0.6;
-const buttonHeight = height * 0.1;
-const logoSide = width * 0.6;
+import { StyleSheet } from 'react-native';
+import { colors } from '../../styles/theme/colors';
+import { sizing } from '../../styles/theme/sizing';
+import { fontSize } from '../../styles/theme/typography';
+import { layout, spacing } from '../../styles/theme/spacing';
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        backgroundColor: '#401e0a',
-    },
-    button: {
-        backgroundColor: '#241106',
-        width: buttonWidth,
-        height: buttonHeight,
-        paddingVertical: 10,
-        borderRadius: 10,
-        marginVertical: 15,
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderWidth: 2,
-        borderColor: 'black',
-    },
-    buttonText: {
-        color: 'white',
-        fontSize: 36,
-    },
-    logoContainer: {
-        alignItems: 'center', 
-        marginTop: 20, 
-    },
-    logo: {
-        width: logoSide, 
-        height: logoSide,
-        borderRadius: logoSide / 3
-    },
-    logoSmall: {
-        width: logoSide / 3, 
-        height: logoSide / 3,
-        borderRadius: logoSide / 3
-    },
-    title: {
-        paddingTop: '5%',
-        color: 'white',
-        fontSize: 60
-    },
-    uncaughtPage: {
-        color: 'white',
-        fontSize: 48
-    }
+  mainMenu_container: {
+    flex: 1,
+    alignItems: 'center',
+    backgroundColor: colors.primary_background,
+    paddingTop: spacing.xl,
+  },
+
+  mainMenu_title: {
+    color: colors.neutral_white,
+    fontSize: fontSize.display,
+    letterSpacing: 4,
+    fontWeight: '300',
+  },
+
+  mainMenu_logoContainer: {
+    alignItems: 'center',
+    marginTop: spacing.xl,
+    marginBottom: spacing.xxl,
+  },
+
+  mainMenu_logo: {
+    width: sizing.logo_large,
+    height: sizing.logo_large,
+    borderRadius: sizing.logo_large / 3,
+  },
+
+  mainMenu_button: {
+    backgroundColor: colors.primary_dark,
+    width: sizing.button_width,
+    paddingVertical: 18,
+    borderRadius: sizing.borderRadius_button,
+    marginVertical: spacing.sm,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: sizing.borderWidth_subtle,
+    borderColor: colors.border_subtle,
+  },
+
+  mainMenu_buttonText: {
+    color: colors.neutral_white,
+    fontSize: fontSize.xl,
+    fontWeight: '600',
+    letterSpacing: 1,
+  },
+
+  mainMenu_errorText: {
+    color: colors.neutral_white,
+    fontSize: fontSize.xxxl,
+  },
 });
 
 export default styles;

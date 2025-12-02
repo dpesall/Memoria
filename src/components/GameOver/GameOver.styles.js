@@ -1,99 +1,98 @@
 import { StyleSheet, Dimensions } from 'react-native';
+import { colors } from '../../styles/theme/colors';
+import { sizing } from '../../styles/theme/sizing';
+import { layout, spacing } from '../../styles/theme/spacing';
 
-const { width, height } = Dimensions.get('window');
-const buttonWidth = width * 0.6;
-const buttonHeight = height * 0.075;
-const logoSide = width * 0.3;
+const { width } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        backgroundColor: '#401e0a',
-    },
-    scoreBox: {
-        backgroundColor: '#241106',
-        width: width * 0.8,
-        borderRadius: 2,
-        marginVertical: 15,
-        alignItems: 'center',
-        borderWidth: 2,
-        borderColor: 'black',
-    },
-    tableRow: {
-        flexDirection: 'row',
-        width: '100%',
-    },
-    tableCell: {
-        flex: 1,
-        borderWidth: 2,
-        borderColor: 'black',
-        padding: 10,
-    },
-    statHeader: {
-        paddingTop: '2%',
-        color: 'white',
-        fontSize: 36,
-        textAlign: 'center',
-    },
-    statLabel: {
-        color: 'white',
-        fontSize: 24,
-        textAlign: 'right',
-    },
-    statValue: {
-        color: 'white',
-        fontSize: 24,
-        textAlign: 'right',
-    },
-    buttonContainer: {
-        position: 'absolute',
-        bottom: 20,
-    },
-    button: {
-        backgroundColor: '#241106',
-        width: buttonWidth,
-        height: buttonHeight,
-        paddingVertical: 10,
-        borderRadius: 10,
-        marginVertical: 15,
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderWidth: 2,
-        borderColor: 'black',
-    },
-    buttonText: {
-        color: 'white',
-        fontSize: 24,
-    },
-    logoContainer: {
-        alignItems: 'center', 
-        marginTop: 20, 
-    },
-    logo: {
-        width: logoSide, 
-        height: logoSide,
-        borderRadius: logoSide / 3
-    },
-    logoSmall: {
-        width: logoSide / 3, 
-        height: logoSide / 3,
-        borderRadius: logoSide / 3
-    },
-    title: {
-        color: 'white',
-        fontSize: 30
-    },
-    titleContainer: {
-        borderWidth: 3,
-        borderColor: 'black',
-        padding: '1%',
-        alignItems: 'center',
-        width: width,
-        backgroundColor: '#241106',
-        color: 'white',
-        fontSize: 30
-    }
+  gameOver_container: {
+    flex: 1,
+    alignItems: 'center',
+    backgroundColor: colors.primary_background,
+    paddingTop: 40,
+  },
+
+  gameOver_heroSection: {
+    alignItems: 'center',
+    marginBottom: 40,
+  },
+
+  gameOver_subtitle: {
+    fontSize: 22,
+    color: 'rgba(255,255,255,0.7)',
+    marginBottom: 8,
+    letterSpacing: 1,
+  },
+
+  gameOver_heroScore: {
+    fontSize: 80,
+    fontWeight: 'bold',
+    color: colors.neutral_white,
+    letterSpacing: -2,
+  },
+
+  gameOver_heroLabel: {
+    fontSize: 16,
+    color: 'rgba(255,255,255,0.5)',
+    marginTop: -4,
+    letterSpacing: 2,
+    textTransform: 'uppercase',
+  },
+
+  gameOver_statsCard: {
+    backgroundColor: colors.primary_dark,
+    borderRadius: 20,
+    paddingHorizontal: 24,
+    paddingVertical: 8,
+    width: width * 0.85,
+  },
+
+  gameOver_statRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 16,
+  },
+
+  gameOver_divider: {
+    height: 1,
+    backgroundColor: 'rgba(255,255,255,0.08)',
+  },
+
+  gameOver_statLabel: {
+    fontSize: 17,
+    color: 'rgba(255,255,255,0.7)',
+  },
+
+  gameOver_statValue: {
+    fontSize: 17,
+    color: colors.neutral_white,
+    fontWeight: '600',
+  },
+
+  gameOver_buttonContainer: {
+    position: 'absolute',
+    bottom: 40,
+    width: '100%',
+    alignItems: 'center',
+  },
+
+  gameOver_button: {
+    backgroundColor: colors.primary_dark,
+    width: width * 0.5,
+    paddingVertical: 16,
+    borderRadius: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  gameOver_buttonText: {
+    color: colors.neutral_white,
+    fontSize: 18,
+    fontWeight: '600',
+    letterSpacing: 1,
+  },
 });
 
 export default styles;

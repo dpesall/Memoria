@@ -1,26 +1,28 @@
-import React, { useEffect, useState } from "react";
-import { Text, Button, SafeAreaView, View, TouchableOpacity, Image } from "react-native";
-import styles from "./Credits.styles";
-import { images } from "../../constants/images";
+import React from 'react';
+import { Text, SafeAreaView, View, TouchableOpacity, Image } from 'react-native';
+import styles from './Credits.styles';
+import { images } from '../../constants/images';
 
-const Credits = ( {currentPage, setCurrentPage} ) => {
-
-    return (
-        <SafeAreaView style={styles.container}>
-            <View style={styles.titleContainer}>
-                <Text style={styles.title}>Credits</Text>
-            </View>
-            <View style={styles.logoContainer}>
-                <Image source={images.memoriaLogoLight} style={styles.logo} />
-            </View>
-
-            <View>
-                <TouchableOpacity style={styles.button} onPress={ () => setCurrentPage('back') }>
-                    <Text style={styles.buttonText}>Back</Text>
-                </TouchableOpacity>
-            </View>
-        </SafeAreaView>
-    );
-}
+const Credits = ({ setCurrentPage }) => {
+  return (
+    <SafeAreaView style={styles.credits_container}>
+      <View style={styles.credits_header}>
+        <Text style={styles.credits_title}>Credits</Text>
+      </View>
+      <View style={styles.credits_logoContainer}>
+        <Image source={images.memoriaLogoLight} style={styles.credits_logo} />
+      </View>
+      <View>
+        <TouchableOpacity
+          style={styles.credits_button}
+          onPress={() => setCurrentPage('back')}
+          activeOpacity={0.8}
+        >
+          <Text style={styles.credits_buttonText}>Back</Text>
+        </TouchableOpacity>
+      </View>
+    </SafeAreaView>
+  );
+};
 
 export default Credits;
