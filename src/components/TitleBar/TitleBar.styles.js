@@ -1,20 +1,23 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform, StatusBar } from 'react-native';
 import { colors } from '../../styles/theme/colors';
 import { sizing } from '../../styles/theme/sizing';
 
 const styles = StyleSheet.create({
   titleBar_container: {
-    backgroundColor: colors.primary_darkest,
+    flex: 1,
+    backgroundColor: colors.primary_background,
     borderBottomWidth: sizing.borderWidth_subtle,
-    borderBottomColor: colors.overlay_light,
+    borderBottomColor: colors.border_card,
+    justifyContent: 'flex-end',
+    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
   },
 
   titleBar_content: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingVertical: 12,
-    paddingHorizontal: 16,
+    paddingHorizontal: '4%',
+    paddingBottom: 8,
   },
 });
 

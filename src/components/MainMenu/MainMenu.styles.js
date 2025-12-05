@@ -1,58 +1,71 @@
 import { StyleSheet } from 'react-native';
 import { colors } from '../../styles/theme/colors';
 import { sizing } from '../../styles/theme/sizing';
-import { fontSize } from '../../styles/theme/typography';
-import { layout, spacing } from '../../styles/theme/spacing';
+import { spacing } from '../../styles/theme/spacing';
+import { fontFamily, fontSize } from '../../styles/theme/typography';
 
 const styles = StyleSheet.create({
   mainMenu_container: {
     flex: 1,
-    alignItems: 'center',
     backgroundColor: colors.primary_background,
-    paddingTop: spacing.xl,
+    alignItems: 'center',
   },
 
   mainMenu_title: {
-    color: colors.neutral_white,
+    color: colors.text_primary,
     fontSize: fontSize.display,
-    letterSpacing: 4,
-    fontWeight: '300',
+    fontFamily: 'Orbitron_700Bold',
+    marginTop: spacing.sm,
+    textTransform: 'uppercase',
+    letterSpacing: 2,
   },
 
   mainMenu_logoContainer: {
-    alignItems: 'center',
-    marginTop: spacing.xl,
-    marginBottom: spacing.xxl,
+    marginTop: spacing.lg,
+    marginBottom: spacing.xxxl,
   },
 
   mainMenu_logo: {
     width: sizing.logo_large,
     height: sizing.logo_large,
-    borderRadius: sizing.logo_large / 3,
+    borderRadius: sizing.borderRadius_card,
+  },
+
+  mainMenu_buttons: {
+    alignItems: 'center',
   },
 
   mainMenu_button: {
-    backgroundColor: colors.primary_dark,
-    width: sizing.button_width,
-    paddingVertical: 18,
+    backgroundColor: colors.accent_primary,
     borderRadius: sizing.borderRadius_button,
-    marginVertical: spacing.sm,
+    width: sizing.button_width,
+    height: sizing.button_height,
     alignItems: 'center',
     justifyContent: 'center',
+    marginVertical: spacing.sm,
+    shadowColor: colors.shadow_dark,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+
+  mainMenu_buttonSecondary: {
+    backgroundColor: colors.primary_card,
+    borderRadius: sizing.borderRadius_button,
     borderWidth: sizing.borderWidth_subtle,
-    borderColor: colors.border_subtle,
+    borderColor: colors.border_card,
+    width: sizing.button_width,
+    height: sizing.button_height,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginVertical: spacing.sm,
   },
 
   mainMenu_buttonText: {
-    color: colors.neutral_white,
-    fontSize: fontSize.xl,
-    fontWeight: '600',
-    letterSpacing: 1,
-  },
-
-  mainMenu_errorText: {
-    color: colors.neutral_white,
-    fontSize: fontSize.xxxl,
+    color: colors.text_primary,
+    fontSize: fontSize.md,
+    fontFamily: fontFamily.bodySemiBold,
   },
 });
 

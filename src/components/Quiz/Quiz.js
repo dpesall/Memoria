@@ -1,14 +1,16 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { Audio } from 'expo-av';
-import { Text, SafeAreaView, View, TouchableOpacity, Animated, Dimensions } from 'react-native';
+import React, { useState, useRef, useEffect } from 'react';
+import { View, Text, TouchableOpacity, Animated, Easing } from 'react-native';
 import getRandomQuestion from '../../utils/QuestionGenerator';
-import styles from './Quiz.styles';
+import { useSound } from '../../context/SoundContext';
 import GameOver from '../GameOver/GameOver';
+import styles from './Quiz.styles';
 
-const { width } = Dimensions.get('window');
+const TIMER_DURATION = 15000;
+const GRACE_PERIOD_THRESHOLD = (14 / 15) * 100; // ~93.33% - full points for first second
 const STANDARD_TOTAL_QUESTIONS = 10;
 
-const Quiz = ({ setCurrentPage, volumeSetting, setPageView, topic, mode }) => {
+const Quiz = ({ setCurrentPage, setPageView, topic, difficulty, mode }) => {
+  const { playClickSound, playGameSound } = useSound();
   const [showInstructions, setShowInstructions] = useState(true);
   const [showQuestionResults, setShowQuestionResults] = useState(false);
   const [score, setScore] = useState(0);
@@ -19,313 +21,317 @@ const Quiz = ({ setCurrentPage, volumeSetting, setPageView, topic, mode }) => {
   const [longestStreak, setLongestStreak] = useState(0);
   const [gameOver, setGameOver] = useState(false);
   const [viewGameOverScreen, setViewGameOverScreen] = useState(false);
-  const [question, setQuestion] = useState({});
+  const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [isCorrect, setIsCorrect] = useState(null);
   const [correctAnswer, setCorrectAnswer] = useState(null);
   const [timeUp, setTimeUp] = useState(false);
   const [pointsEarned, setPointsEarned] = useState(0);
-  const progressAnim = useRef(new Animated.Value(width)).current;
-  const animationRef = useRef(null);
+  const [bestAnswer, setBestAnswer] = useState(0);
 
-  useEffect(() => {
-    if (!showInstructions && !showQuestionResults) {
-      startProgressBar();
-    }
-  }, [question]);
+  const progressAnim = useRef(new Animated.Value(100)).current;
+  const timerListenerId = useRef(null);
+  const currentProgressRef = useRef(100);
 
-  const playSound = async (soundType) => {
-    try {
-      if (volumeSetting === 'Unmute Sound') {
-        return;
-      }
-      let sound;
-      switch (soundType) {
-        case 'correct':
-          sound = await Audio.Sound.createAsync(
-            require('../../../assets/sounds/correct-chime.wav')
-          );
-          break;
-        case 'incorrect':
-          sound = await Audio.Sound.createAsync(
-            require('../../../assets/sounds/incorrect-chime.wav')
-          );
-          break;
-        case 'gameOver':
-          sound = await Audio.Sound.createAsync(
-            require('../../../assets/sounds/game-over.wav')
-          );
-          break;
-        default:
-          console.warn('Invalid sound type');
-          return;
-      }
-      await sound.sound.playAsync();
-    } catch (error) {
-      console.error('Error playing sound:', error);
-    }
-  };
-
-  const startProgressBar = () => {
-    progressAnim.setValue(width);
-    animationRef.current = Animated.timing(progressAnim, {
-      toValue: 0,
-      duration: 10000,
-      useNativeDriver: false,
-    });
-
-    animationRef.current.start(({ finished }) => {
-      if (finished && !selectedAnswer) {}
-    });
-
-    const listenerId = progressAnim.addListener(({ value }) => {
-      const progress = value / width;
-      if (progress <= 0.01) {
-        progressAnim.removeListener(listenerId);
-        setTimeUp(true);
-        handleAnswer(null, true);
-        progressAnim.setValue(0);
-      }
-    });
-  };
-
-  const buildQuestion = () => {
-    return (
-      <View style={styles.quiz_questionContainer}>
-        <Text style={styles.quiz_questionText}>{question.question}</Text>
-        {question.answers[1].map((answer, index) => (
-          <TouchableOpacity
-            key={index}
-            style={[
-              styles.quiz_answerButton,
-              selectedAnswer === answer &&
-                (isCorrect
-                  ? styles.quiz_answerButtonCorrect
-                  : styles.quiz_answerButtonWrong),
-              correctAnswer === answer && styles.quiz_answerButtonCorrect,
-              timeUp &&
-                selectedAnswer !== answer &&
-                correctAnswer !== answer &&
-                styles.quiz_answerButtonWrong,
-            ]}
-            onPress={() => handleAnswer(answer)}
-            disabled={selectedAnswer !== null}
-            activeOpacity={0.8}
-          >
-            <Text style={styles.quiz_answerText}>{answer}</Text>
-          </TouchableOpacity>
-        ))}
-        {selectedAnswer !== null && (
-          <Text style={styles.quiz_pointsText}>+{pointsEarned} points</Text>
-        )}
-      </View>
-    );
-  };
-
-  const handleAnswer = async (answer, fromTimeout = false) => {
-    if (animationRef.current) {
-      animationRef.current.stop();
-    }
-
-    const newQuestionNumber = questionNumber + 1;
-    setQuestionNumber(newQuestionNumber);
-
-    progressAnim.stopAnimation((value) => {
-      value = fromTimeout ? 0 : value;
-      const points = fromTimeout ? 0 : Math.ceil(500 * (value / width) + 500);
-      setPointsEarned(points);
-
-      if (fromTimeout) {
-        setCorrectAnswer(question.answers[0]);
-        setWrongAnswers(prev => prev + 1);
-        setCurrentStreak(0);
-
-        if (mode === 'Survival') {
-          setGameOver(true);
-          playSound('gameOver');
-        } else {
-          playSound('incorrect');
-          if (newQuestionNumber >= STANDARD_TOTAL_QUESTIONS) {
-            setGameOver(true);
-          }
-        }
-      } else {
-        setSelectedAnswer(answer);
-        const correct = answer === question.answers[0];
-        setIsCorrect(correct);
-
-        if (correct) {
-          const newScore = score + points;
-          setScore(newScore);
-          setCorrectAnswers(prev => prev + 1);
-          const newStreak = currentStreak + 1;
-          setCurrentStreak(newStreak);
-          if (newStreak > longestStreak) {
-            setLongestStreak(newStreak);
-          }
-          playSound('correct');
-
-          if (mode === 'Standard' && newQuestionNumber >= STANDARD_TOTAL_QUESTIONS) {
-            setGameOver(true);
-          }
-        } else {
-          setWrongAnswers(prev => prev + 1);
-          setCurrentStreak(0);
-          setCorrectAnswer(question.answers[0]);
-
-          if (mode === 'Survival') {
-            setGameOver(true);
-            playSound('gameOver');
-          } else {
-            playSound('incorrect');
-            if (newQuestionNumber >= STANDARD_TOTAL_QUESTIONS) {
-              setGameOver(true);
-            }
-          }
-        }
-      }
-      setShowQuestionResults(true);
-    });
-  };
-
-  const buildInstructions = () => {
-    switch (mode) {
-      case 'Standard':
-        return (
-          <View style={styles.quiz_instructionsContainer}>
-            <Text style={styles.quiz_instructionsTitle}>Standard</Text>
-            <Text style={styles.quiz_instructionsText}>
-              Answer 10 questions as fast as you can to score the most points.
-              Wrong answers don't end the game but affect your accuracy!
-            </Text>
-          </View>
-        );
-      case 'Survival':
-        return (
-          <View style={styles.quiz_instructionsContainer}>
-            <Text style={styles.quiz_instructionsTitle}>Survival</Text>
-            <Text style={styles.quiz_instructionsText}>
-              Answer questions as fast as you can. One wrong answer or timeout
-              ends your run!
-            </Text>
-          </View>
-        );
+  const getDifficultyRange = () => {
+    switch (difficulty) {
+      case 'Easy':
+        return { min: 1, max: 3 };
+      case 'Medium':
+        return { min: 4, max: 7 };
+      case 'Hard':
+        return { min: 8, max: 10 };
       default:
-        return (
-          <Text style={styles.quiz_instructionsText}>
-            Invalid mode for instructions.
-          </Text>
-        );
+        return { min: 1, max: 10 };
     }
   };
 
-  const retrieveNewQuestion = () => {
-    const newQuestion = getRandomQuestion(topic);
+  const loadQuestion = () => {
+    const { min, max } = getDifficultyRange();
+    const newQuestion = getRandomQuestion(topic, min, max);
     setQuestion(newQuestion);
     setSelectedAnswer(null);
     setIsCorrect(null);
     setCorrectAnswer(null);
     setTimeUp(false);
     setPointsEarned(0);
-  };
-
-  const pressedStart = () => {
-    setShowInstructions(false);
     setShowQuestionResults(false);
-    retrieveNewQuestion();
   };
 
-  const getHeaderText = () => {
-    if (showInstructions) {
-      return `Score: ${score}`;
+  const startTimer = () => {
+    progressAnim.setValue(100);
+    currentProgressRef.current = 100;
+
+    if (timerListenerId.current) {
+      progressAnim.removeListener(timerListenerId.current);
     }
-    if (mode === 'Standard') {
-      return `Question ${questionNumber + 1}/${STANDARD_TOTAL_QUESTIONS}  |  Score: ${score}`;
-    }
-    return `Question ${questionNumber + 1}  |  Score: ${score}`;
+
+    timerListenerId.current = progressAnim.addListener(({ value }) => {
+      currentProgressRef.current = value;
+      if (value <= 1 && !showQuestionResults) {
+        handleTimeout();
+      }
+    });
+
+    Animated.timing(progressAnim, {
+      toValue: 0,
+      duration: TIMER_DURATION,
+      useNativeDriver: false,
+      easing: Easing.linear,
+    }).start();
   };
 
-  const isLastQuestion = mode === 'Standard' && questionNumber >= STANDARD_TOTAL_QUESTIONS;
+  const stopTimer = () => {
+    progressAnim.stopAnimation();
+    if (timerListenerId.current) {
+      progressAnim.removeListener(timerListenerId.current);
+      timerListenerId.current = null;
+    }
+  };
+
+  const handleTimeout = () => {
+    if (showQuestionResults) return;
+
+    stopTimer();
+    setTimeUp(true);
+    setShowQuestionResults(true);
+    setCorrectAnswer(question.answers[0]);
+    setWrongAnswers((prev) => prev + 1);
+    setCurrentStreak(0);
+    playGameSound('incorrect');
+
+    if (mode === 'Survival') {
+      setGameOver(true);
+    } else if (questionNumber + 1 >= STANDARD_TOTAL_QUESTIONS) {
+      setGameOver(true);
+    }
+  };
+
+  const handleAnswerSelect = (answer) => {
+    if (showQuestionResults || selectedAnswer) return;
+
+    stopTimer();
+    setSelectedAnswer(answer);
+    const correct = answer === question.answers[0];
+    setIsCorrect(correct);
+    setShowQuestionResults(true);
+
+    if (correct) {
+      let points;
+      if (currentProgressRef.current >= GRACE_PERIOD_THRESHOLD) {
+        points = 1000;
+      } else {
+        points = Math.round(500 + (500 * currentProgressRef.current / GRACE_PERIOD_THRESHOLD));
+      }
+      setPointsEarned(points);
+      if (points > bestAnswer) setBestAnswer(points);
+      setScore((prev) => prev + points);
+      setCorrectAnswers((prev) => prev + 1);
+      const newStreak = currentStreak + 1;
+      setCurrentStreak(newStreak);
+      if (newStreak > longestStreak) {
+        setLongestStreak(newStreak);
+      }
+      playGameSound('correct');
+    } else {
+      setPointsEarned(0);
+      setWrongAnswers((prev) => prev + 1);
+      setCorrectAnswer(question.answers[0]);
+      setCurrentStreak(0);
+      playGameSound('incorrect');
+
+      if (mode === 'Survival') {
+        setGameOver(true);
+      }
+    }
+
+    if (mode === 'Standard' && questionNumber + 1 >= STANDARD_TOTAL_QUESTIONS) {
+      setGameOver(true);
+    }
+  };
+
+  const handleNext = () => {
+    setQuestionNumber((prev) => prev + 1);
+    loadQuestion();
+    startTimer();
+  };
+
+  const handleStartQuiz = () => {
+    setShowInstructions(false);
+    loadQuestion();
+    startTimer();
+  };
+
+  const getAnswerStyle = (answer) => {
+    if (!showQuestionResults) {
+      return styles.quiz_answerButton;
+    }
+
+    const isSelected = answer === selectedAnswer;
+    const isCorrectAnswer = answer === question.answers[0];
+
+    if (isCorrectAnswer) {
+      return styles.quiz_answerButtonCorrect;
+    }
+
+    if (isSelected && !isCorrect) {
+      return styles.quiz_answerButtonWrong;
+    }
+
+    return styles.quiz_answerButton;
+  };
+
+  useEffect(() => {
+    return () => {
+      stopTimer();
+    };
+  }, []);
+
+  if (viewGameOverScreen) {
+    return (
+      <GameOver
+        setPageView={setPageView}
+        mode={mode}
+        score={score}
+        correctAnswers={correctAnswers}
+        wrongAnswers={wrongAnswers}
+        questionNumber={questionNumber + 1}
+        longestStreak={longestStreak}
+        bestAnswer={bestAnswer}
+      />
+    );
+  }
+
+  if (showInstructions) {
+    return (
+      <View style={styles.quiz_container}>
+        <View style={styles.quiz_header}>
+          <Text style={styles.quiz_headerTitle}>{mode} Mode</Text>
+        </View>
+
+        <View style={styles.quiz_instructionsContainer}>
+          <View style={styles.quiz_instructionsCard}>
+            <Text style={styles.quiz_instructionsTitle}>{mode}</Text>
+            <Text style={styles.quiz_instructionsText}>
+              {mode === 'Standard'
+                ? 'Answer 10 questions about the Bible. Wrong answers won\'t end the game, but you\'ll miss out on points!'
+                : 'Answer as many questions as you can. One wrong answer or timeout ends the game. How far can you go?'}
+            </Text>
+          </View>
+
+          <TouchableOpacity
+            style={styles.quiz_startButton}
+            onPress={() => { playClickSound(); handleStartQuiz(); }}
+            activeOpacity={0.8}
+          >
+            <Text style={styles.quiz_startButtonText}>Start</Text>
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.quiz_footer}>
+          <TouchableOpacity
+            style={styles.quiz_backButton}
+            onPress={() => { playClickSound(); setPageView('main'); }}
+            activeOpacity={0.8}
+          >
+            <Text style={styles.quiz_backButtonText}>Back</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    );
+  }
 
   return (
-    <SafeAreaView style={styles.quiz_container}>
-      {viewGameOverScreen && (
-        <GameOver
-          setPageView={setPageView}
-          mode={mode}
-          score={score}
-          correctAnswers={correctAnswers}
-          wrongAnswers={wrongAnswers}
-          questionNumber={questionNumber}
-          totalQuestions={mode === 'Standard' ? STANDARD_TOTAL_QUESTIONS : null}
-          longestStreak={longestStreak}
-        />
-      )}
-      {!viewGameOverScreen && (
-        <>
-          <View style={styles.quiz_header}>
-            <Text style={styles.quiz_scoreText}>{getHeaderText()}</Text>
-          </View>
+    <View style={styles.quiz_container}>
+      <View style={styles.quiz_gameHeader}>
+        <Text style={styles.quiz_questionCount}>
+          Question {questionNumber + 1}
+          {mode === 'Standard' ? `/${STANDARD_TOTAL_QUESTIONS}` : ''}
+        </Text>
+        <Text style={styles.quiz_score}>{score} pts</Text>
+      </View>
+
+      <View style={styles.quiz_progressContainer}>
+        <View style={styles.quiz_progressBar}>
           <Animated.View
             style={[
-              !timeUp ? styles.quiz_progressBar : styles.quiz_progressBarEmpty,
-              { width: progressAnim },
+              styles.quiz_progressFill,
+              {
+                width: progressAnim.interpolate({
+                  inputRange: [0, 100],
+                  outputRange: ['0%', '100%'],
+                }),
+              },
             ]}
           />
-          <View style={styles.quiz_container}>
-            {showInstructions && buildInstructions()}
-            {!showInstructions && buildQuestion()}
+        </View>
+      </View>
+
+      {question && (
+        <View style={styles.quiz_content}>
+          <View style={styles.quiz_questionContainer}>
+            <Text style={styles.quiz_questionText}>{question.question}</Text>
           </View>
-          <View style={styles.quiz_footer}>
-            {showInstructions && (
-              <>
-                <TouchableOpacity
-                  style={styles.quiz_button}
-                  onPress={pressedStart}
-                  activeOpacity={0.8}
-                >
-                  <Text style={styles.quiz_buttonText}>Start</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  style={styles.quiz_button}
-                  onPress={() => setPageView('main')}
-                  activeOpacity={0.8}
-                >
-                  <Text style={styles.quiz_buttonText}>Back</Text>
-                </TouchableOpacity>
-              </>
-            )}
-            {showQuestionResults && !gameOver && (
-              <>
-                <TouchableOpacity
-                  style={styles.quiz_button}
-                  onPress={() => pressedStart()}
-                  activeOpacity={0.8}
-                >
-                  <Text style={styles.quiz_buttonText}>Next</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  style={styles.quiz_button}
-                  onPress={() => setPageView('main')}
-                  activeOpacity={0.8}
-                >
-                  <Text style={styles.quiz_buttonText}>Quit</Text>
-                </TouchableOpacity>
-              </>
-            )}
-            {showQuestionResults && gameOver && (
+
+          <View style={styles.quiz_answersContainer}>
+            {question.answers[1].map((answer, index) => (
               <TouchableOpacity
-                style={styles.quiz_button}
-                onPress={() => setViewGameOverScreen(true)}
+                key={index}
+                style={getAnswerStyle(answer)}
+                onPress={() => handleAnswerSelect(answer)}
+                activeOpacity={0.8}
+                disabled={showQuestionResults}
+              >
+                <Text style={styles.quiz_answerText}>{answer}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+
+          {showQuestionResults && (
+            <View style={styles.quiz_resultContainer}>
+              {isCorrect ? (
+                <Text style={styles.quiz_pointsEarned}>+{pointsEarned} pts</Text>
+              ) : timeUp ? (
+                <Text style={styles.quiz_timeUp}>Time's Up!</Text>
+              ) : (
+                <Text style={styles.quiz_wrongAnswer}>Wrong!</Text>
+              )}
+            </View>
+          )}
+        </View>
+      )}
+
+      {showQuestionResults && (
+        <View style={styles.quiz_actionFooter}>
+          {gameOver ? (
+            <TouchableOpacity
+              style={styles.quiz_viewResultsButton}
+              onPress={() => { playClickSound(); setViewGameOverScreen(true); }}
+              activeOpacity={0.8}
+            >
+              <Text style={styles.quiz_viewResultsButtonText}>View Results</Text>
+            </TouchableOpacity>
+          ) : (
+            <>
+              <TouchableOpacity
+                style={styles.quiz_nextButton}
+                onPress={() => { playClickSound(); handleNext(); }}
                 activeOpacity={0.8}
               >
-                <Text style={styles.quiz_buttonText}>View Results</Text>
+                <Text style={styles.quiz_nextButtonText}>Next</Text>
               </TouchableOpacity>
-            )}
-          </View>
-        </>
+              <TouchableOpacity
+                style={styles.quiz_quitButton}
+                onPress={() => { playClickSound(); setPageView('main'); }}
+                activeOpacity={0.8}
+              >
+                <Text style={styles.quiz_quitButtonText}>Quit</Text>
+              </TouchableOpacity>
+            </>
+          )}
+        </View>
       )}
-    </SafeAreaView>
+    </View>
   );
 };
 

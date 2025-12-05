@@ -16,52 +16,70 @@ export const containers = StyleSheet.create({
   },
 
   titleBar_container: {
-    backgroundColor: colors.primary_darkest,
+    backgroundColor: colors.primary_background,
+    borderBottomWidth: sizing.borderWidth_subtle,
+    borderBottomColor: colors.border_card,
   },
 
   titleBar_content: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '3%',
+    paddingHorizontal: '4%',
+    paddingVertical: '2%',
   },
 
   header_primary: {
     width: sizing.fullWidth,
     padding: layout.headerPadding,
-    backgroundColor: colors.primary_dark,
+    backgroundColor: colors.primary_card,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    borderTopWidth: sizing.borderWidth_standard,
-    borderTopColor: colors.neutral_black,
-    borderBottomWidth: sizing.borderWidth_standard,
-    borderBottomColor: colors.neutral_black,
+    borderBottomWidth: sizing.borderWidth_subtle,
+    borderBottomColor: colors.border_card,
   },
 
   header_page: {
-    borderWidth: sizing.borderWidth_heavy,
-    borderColor: colors.neutral_black,
-    padding: '1%',
+    padding: '3%',
     alignItems: 'center',
     width: sizing.fullWidth,
-    backgroundColor: colors.primary_dark,
+    backgroundColor: colors.primary_card,
+    borderBottomWidth: sizing.borderWidth_subtle,
+    borderBottomColor: colors.border_card,
+  },
+
+  card_container: {
+    backgroundColor: colors.primary_cardTransparent,
+    borderRadius: sizing.borderRadius_card,
+    borderWidth: sizing.borderWidth_subtle,
+    borderColor: colors.border_card,
+    padding: 20,
+    marginHorizontal: 16,
+    marginVertical: 8,
+    shadowColor: colors.shadow_dark,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.25,
+    shadowRadius: 8,
+    elevation: 5,
   },
 
   section_clickable: {
-    borderWidth: sizing.borderWidth_heavy,
-    borderTopWidth: 0,
-    borderColor: colors.neutral_black,
-    padding: '1%',
+    backgroundColor: colors.primary_card,
+    borderRadius: sizing.borderRadius_card,
+    borderWidth: sizing.borderWidth_subtle,
+    borderColor: colors.border_card,
+    padding: 16,
+    marginHorizontal: 16,
+    marginVertical: 8,
     alignItems: 'center',
-    width: sizing.fullWidth,
-    backgroundColor: colors.primary_medium,
   },
 
   footer_buttons: {
     flex: 1,
     justifyContent: 'flex-end',
-    marginBottom: 20,
+    alignItems: 'center',
+    marginBottom: 24,
   },
 
   row_centered: {
@@ -74,5 +92,6 @@ export const containers = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    width: '100%',
   },
 });

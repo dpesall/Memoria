@@ -8,3 +8,11 @@ export const fontSize = {
   xxxl: 48,
   display: 60,
 };
+
+export const fontFamily = {
+  body: 'Inter_400Regular',
+  bodyMedium: 'Inter_500Medium',
+  bodySemiBold: 'Inter_600SemiBold',
+  bodyBold: 'Inter_700Bold',
+  display: 'Righteous_400Regular',
+};

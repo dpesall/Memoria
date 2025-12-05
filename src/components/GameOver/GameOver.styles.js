@@ -1,97 +1,115 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { colors } from '../../styles/theme/colors';
 import { sizing } from '../../styles/theme/sizing';
-import { layout, spacing } from '../../styles/theme/spacing';
-
-const { width } = Dimensions.get('window');
+import { spacing } from '../../styles/theme/spacing';
+import { fontFamily, fontSize } from '../../styles/theme/typography';
 
 const styles = StyleSheet.create({
   gameOver_container: {
     flex: 1,
-    alignItems: 'center',
     backgroundColor: colors.primary_background,
-    paddingTop: 40,
   },
 
-  gameOver_heroSection: {
+  gameOver_scrollContent: {
+    flexGrow: 1,
     alignItems: 'center',
-    marginBottom: 40,
+    paddingTop: spacing.xxl,
   },
 
-  gameOver_subtitle: {
-    fontSize: 22,
-    color: 'rgba(255,255,255,0.7)',
-    marginBottom: 8,
-    letterSpacing: 1,
+  gameOver_hero: {
+    alignItems: 'center',
+    marginBottom: spacing.xxl,
+  },
+
+  gameOver_heroTitle: {
+    color: colors.text_primary,
+    fontSize: fontSize.xxl,
+    fontFamily: 'Arvo_700Bold',
+    marginBottom: spacing.lg,
   },
 
   gameOver_heroScore: {
+    color: colors.accent_primary,
     fontSize: 80,
-    fontWeight: 'bold',
-    color: colors.neutral_white,
-    letterSpacing: -2,
+    fontFamily: 'Arvo_400Regular',
   },
 
   gameOver_heroLabel: {
-    fontSize: 16,
-    color: 'rgba(255,255,255,0.5)',
-    marginTop: -4,
-    letterSpacing: 2,
+    color: colors.text_secondary,
+    fontSize: fontSize.xs,
+    fontFamily: fontFamily.bodyMedium,
     textTransform: 'uppercase',
+    letterSpacing: 2,
+    marginTop: spacing.xs,
   },
 
   gameOver_statsCard: {
-    backgroundColor: colors.primary_dark,
-    borderRadius: 20,
-    paddingHorizontal: 24,
-    paddingVertical: 8,
-    width: width * 0.85,
+    backgroundColor: colors.primary_cardTransparent,
+    borderRadius: sizing.borderRadius_card,
+    borderWidth: sizing.borderWidth_subtle,
+    borderColor: colors.border_card,
+    padding: spacing.xl,
+    marginHorizontal: spacing.lg,
+    width: sizing.button_width_large,
   },
 
   gameOver_statRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingVertical: 16,
+    paddingVertical: spacing.md,
+    borderBottomWidth: 1,
+    borderBottomColor: colors.border_card,
   },
 
-  gameOver_divider: {
-    height: 1,
-    backgroundColor: 'rgba(255,255,255,0.08)',
+  gameOver_statRowLast: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: spacing.md,
   },
 
   gameOver_statLabel: {
-    fontSize: 17,
-    color: 'rgba(255,255,255,0.7)',
+    color: colors.text_secondary,
+    fontSize: fontSize.sm,
+    fontFamily: fontFamily.body,
   },
 
   gameOver_statValue: {
-    fontSize: 17,
-    color: colors.neutral_white,
-    fontWeight: '600',
+    color: colors.text_primary,
+    fontSize: fontSize.md,
+    fontFamily: fontFamily.bodySemiBold,
   },
 
-  gameOver_buttonContainer: {
-    position: 'absolute',
-    bottom: 40,
-    width: '100%',
+  gameOver_statValueAccent: {
+    color: colors.accent_primary,
+    fontSize: fontSize.md,
+    fontFamily: fontFamily.bodySemiBold,
+  },
+
+  gameOver_footer: {
     alignItems: 'center',
+    paddingVertical: spacing.xxl,
   },
 
-  gameOver_button: {
-    backgroundColor: colors.primary_dark,
-    width: width * 0.5,
-    paddingVertical: 16,
-    borderRadius: 30,
+  gameOver_exitButton: {
+    backgroundColor: colors.accent_primary,
+    borderRadius: sizing.borderRadius_button,
+    width: sizing.button_width,
+    height: sizing.button_height,
     alignItems: 'center',
     justifyContent: 'center',
+    shadowColor: colors.shadow_dark,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 3,
   },
 
-  gameOver_buttonText: {
-    color: colors.neutral_white,
-    fontSize: 18,
-    fontWeight: '600',
-    letterSpacing: 1,
+  gameOver_exitButtonText: {
+    color: colors.text_primary,
+    fontSize: fontSize.md,
+    fontFamily: fontFamily.bodySemiBold,
   },
 });
 

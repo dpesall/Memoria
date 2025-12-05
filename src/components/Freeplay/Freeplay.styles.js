@@ -1,129 +1,172 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { colors } from '../../styles/theme/colors';
 import { sizing } from '../../styles/theme/sizing';
-import { fontSize } from '../../styles/theme/typography';
-import { layout, spacing } from '../../styles/theme/spacing';
-
-const { width } = Dimensions.get('window');
+import { spacing } from '../../styles/theme/spacing';
+import { fontFamily, fontSize } from '../../styles/theme/typography';
 
 const styles = StyleSheet.create({
   freeplay_container: {
     flex: 1,
-    alignItems: 'center',
     backgroundColor: colors.primary_background,
   },
 
   freeplay_header: {
-    paddingVertical: 16,
-    paddingHorizontal: 20,
-    alignItems: 'center',
-    width: sizing.fullWidth,
-    backgroundColor: colors.primary_dark,
+    padding: spacing.lg,
+    backgroundColor: colors.primary_card,
     borderBottomWidth: sizing.borderWidth_subtle,
-    borderBottomColor: colors.overlay_light,
+    borderBottomColor: colors.border_card,
+    alignItems: 'center',
   },
 
   freeplay_title: {
-    color: colors.neutral_white,
-    fontSize: fontSize.xl,
-    fontWeight: '600',
-    letterSpacing: 1,
+    color: colors.text_primary,
+    fontSize: fontSize.xxl,
+    fontFamily: 'Arvo_700Bold',
   },
 
-  freeplay_section: {
-    paddingVertical: 12,
-    marginTop: spacing.md,
+  freeplay_content: {
+    flex: 1,
     alignItems: 'center',
+    paddingTop: spacing.xxl,
   },
 
-  freeplay_sectionHeader: {
-    marginBottom: spacing.sm,
-  },
-
-  freeplay_sectionLabel: {
-    color: colors.neutral_white,
-    fontSize: fontSize.md,
-    fontWeight: '600',
-    letterSpacing: 1,
-  },
-
-  freeplay_buttonSelected: {
-    backgroundColor: colors.primary_medium,
-    width: width * 0.75,
-    paddingVertical: 14,
-    borderRadius: sizing.borderRadius_button,
-    alignItems: 'center',
-    justifyContent: 'center',
+  freeplay_optionCard: {
+    backgroundColor: colors.primary_card,
+    borderRadius: sizing.borderRadius_card,
     borderWidth: sizing.borderWidth_subtle,
-    borderColor: colors.border_subtle,
+    borderColor: colors.border_card,
+    padding: spacing.lg,
+    marginVertical: spacing.sm,
+    width: sizing.button_width_large,
+    alignItems: 'center',
   },
 
-  freeplay_buttonSelectedText: {
-    color: colors.neutral_white,
+  freeplay_optionLabel: {
+    color: colors.text_secondary,
+    fontSize: fontSize.xs,
+    fontFamily: fontFamily.bodyMedium,
+    textTransform: 'uppercase',
+    letterSpacing: 1,
+    marginBottom: spacing.xs,
+  },
+
+  freeplay_optionValue: {
+    color: colors.accent_primary,
     fontSize: fontSize.lg,
-    fontWeight: '600',
-  },
-
-  freeplay_buttonTopic: {
-    backgroundColor: colors.primary_dark,
-    width: sizing.button_width,
-    paddingVertical: 16,
-    borderRadius: sizing.borderRadius_button,
-    marginVertical: spacing.xs,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderWidth: sizing.borderWidth_subtle,
-    borderColor: colors.border_subtle,
-  },
-
-  freeplay_buttonTopicText: {
-    color: colors.neutral_white,
-    fontSize: fontSize.md,
-    fontWeight: '500',
-  },
-
-  freeplay_button: {
-    backgroundColor: colors.primary_dark,
-    width: sizing.button_width,
-    paddingVertical: 16,
-    borderRadius: sizing.borderRadius_button,
-    marginVertical: spacing.xs,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderWidth: sizing.borderWidth_subtle,
-    borderColor: colors.border_subtle,
-  },
-
-  freeplay_buttonText: {
-    color: colors.neutral_white,
-    fontSize: fontSize.md,
-    fontWeight: '600',
-    letterSpacing: 0.5,
+    fontFamily: fontFamily.bodySemiBold,
   },
 
   freeplay_startButton: {
-    backgroundColor: colors.primary_dark,
-    width: sizing.button_width,
-    paddingVertical: 18,
+    backgroundColor: colors.accent_primary,
     borderRadius: sizing.borderRadius_button,
-    marginBottom: spacing.lg,
+    width: sizing.button_width,
+    height: sizing.button_height,
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: sizing.borderWidth_subtle,
-    borderColor: colors.border_subtle,
+    marginTop: spacing.xxl,
+    shadowColor: colors.shadow_dark,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 3,
   },
 
   freeplay_startButtonText: {
-    color: colors.neutral_white,
-    fontSize: fontSize.lg,
-    fontWeight: '600',
-    letterSpacing: 1,
+    color: colors.text_primary,
+    fontSize: fontSize.md,
+    fontFamily: fontFamily.bodySemiBold,
   },
 
   freeplay_footer: {
-    flex: 1,
-    justifyContent: 'flex-end',
-    marginBottom: spacing.xl,
+    alignItems: 'center',
+    paddingBottom: spacing.xxl,
+  },
+
+  freeplay_backButton: {
+    backgroundColor: colors.primary_card,
+    borderRadius: sizing.borderRadius_button,
+    borderWidth: sizing.borderWidth_subtle,
+    borderColor: colors.border_card,
+    width: sizing.button_width,
+    height: sizing.button_height,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  freeplay_backButtonText: {
+    color: colors.text_primary,
+    fontSize: fontSize.md,
+    fontFamily: fontFamily.bodySemiBold,
+  },
+
+  freeplay_selectionContent: {
+    flexGrow: 1,
+    alignItems: 'center',
+    paddingTop: spacing.xxl,
+    paddingBottom: spacing.lg,
+  },
+
+  freeplay_selectionButton: {
+    backgroundColor: colors.primary_card,
+    borderRadius: sizing.borderRadius_button,
+    borderWidth: sizing.borderWidth_subtle,
+    borderColor: colors.border_card,
+    width: sizing.button_width_large,
+    height: sizing.button_height,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginVertical: spacing.sm,
+  },
+
+  freeplay_selectionButtonActive: {
+    borderColor: colors.accent_primary,
+    borderWidth: sizing.borderWidth_standard,
+  },
+
+  freeplay_selectionButtonText: {
+    color: colors.text_primary,
+    fontSize: fontSize.sm,
+    fontFamily: fontFamily.bodyMedium,
+  },
+
+  freeplay_selectionButtonTextActive: {
+    color: colors.accent_primary,
+    fontFamily: fontFamily.bodySemiBold,
+  },
+
+  freeplay_modeCard: {
+    backgroundColor: colors.primary_cardTransparent,
+    borderRadius: sizing.borderRadius_card,
+    borderWidth: sizing.borderWidth_subtle,
+    borderColor: colors.border_card,
+    padding: spacing.xl,
+    marginVertical: spacing.sm,
+    width: sizing.button_width_large,
+    alignItems: 'center',
+  },
+
+  freeplay_modeCardActive: {
+    borderColor: colors.accent_primary,
+    borderWidth: sizing.borderWidth_standard,
+  },
+
+  freeplay_modeTitle: {
+    color: colors.text_primary,
+    fontSize: fontSize.lg,
+    fontFamily: fontFamily.bodySemiBold,
+    marginBottom: spacing.sm,
+  },
+
+  freeplay_modeTitleActive: {
+    color: colors.accent_primary,
+  },
+
+  freeplay_modeDescription: {
+    color: colors.text_secondary,
+    fontSize: fontSize.xs,
+    fontFamily: fontFamily.body,
+    textAlign: 'center',
+    lineHeight: 20,
   },
 });
 

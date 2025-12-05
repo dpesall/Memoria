@@ -1,24 +1,36 @@
 export const colors = {
-  // Primary palette (browns)
-  primary_background: '#401e0a',
-  primary_dark: '#241106',
-  primary_medium: '#57290f',
-  primary_darkest: '#160a03',
-  primary_answer: '#563718',
+  // Primary palette (dark theme)
+  primary_background: '#222831',
+  primary_card: '#393E46',
+  primary_cardTransparent: 'rgba(57, 62, 70, 0.85)',
+
+  // Accent colors
+  accent_primary: '#00ADB5',
+  accent_glow: '#00F2FF',
+  accent_pressed: '#008B92',
 
   // Feedback colors
-  feedback_success: '#4CAF50',
-  feedback_error: '#C62828',
-  feedback_progress: '#FFB800',
+  feedback_success: '#22c55e',
+  feedback_error: '#ef4444',
+  feedback_progress: '#f59e0b',
 
-  // Neutral colors
+  // Text colors
+  text_primary: '#EEEEEE',
+  text_secondary: '#CCCCCC',
+  text_muted: '#B8B8B8',
+
+  // Utility colors
   neutral_white: '#FFFFFF',
   neutral_black: '#000000',
 
   // Transparency utilities
-  text_secondary: 'rgba(255,255,255,0.7)',
-  text_muted: 'rgba(255,255,255,0.5)',
-  border_subtle: 'rgba(255,255,255,0.75)',
-  divider: 'rgba(255,255,255,0.08)',
-  overlay_light: 'rgba(255,255,255,0.1)',
+  border_card: 'rgba(255, 255, 255, 0.1)',
+  border_accent: 'rgba(0, 173, 181, 0.3)',
+  shadow_dark: 'rgba(0, 0, 0, 0.3)',
+  overlay_dark: 'rgba(0, 0, 0, 0.5)',
+
+  // Medal colors (leaderboard)
+  medal_gold: '#FFD700',
+  medal_silver: '#C0C0C0',
+  medal_bronze: '#CD7F32',
 };

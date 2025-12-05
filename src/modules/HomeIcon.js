@@ -1,23 +1,18 @@
 import React from 'react';
-import { SafeAreaView, TouchableOpacity, Image } from 'react-native';
-import { images } from '../constants/images';
+import { TouchableOpacity } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import { colors } from '../styles/theme/colors';
 import styles from './HomeIcon.styles';
 
 const HomeIcon = ({ setCurrentPage }) => {
-  const handleOnHomePress = () => {
-    setCurrentPage('home');
-  };
-
   return (
-    <SafeAreaView style={styles.homeIcon_container}>
-      <TouchableOpacity
-        style={styles.homeIcon_container}
-        onPress={handleOnHomePress}
-        activeOpacity={0.8}
-      >
-        <Image source={images.homeDark} style={styles.homeIcon_image} />
-      </TouchableOpacity>
-    </SafeAreaView>
+    <TouchableOpacity
+      style={styles.homeIcon_touchable}
+      onPress={() => setCurrentPage('home')}
+      activeOpacity={0.7}
+    >
+      <Ionicons name="home" size={28} color={colors.text_primary} />
+    </TouchableOpacity>
   );
 };
 

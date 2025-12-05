@@ -5,10 +5,11 @@ const styles = StyleSheet.create({
   app_container: {
     flex: 1,
     backgroundColor: colors.primary_background,
+    paddingTop: 20,
   },
 
   app_titleBar: {
-    flex: 1,
+    flex: 1.5,
   },
 
   app_content: {

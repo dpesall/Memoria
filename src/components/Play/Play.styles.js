@@ -1,50 +1,81 @@
 import { StyleSheet } from 'react-native';
 import { colors } from '../../styles/theme/colors';
 import { sizing } from '../../styles/theme/sizing';
-import { fontSize } from '../../styles/theme/typography';
 import { spacing } from '../../styles/theme/spacing';
+import { fontFamily, fontSize } from '../../styles/theme/typography';
 
 const styles = StyleSheet.create({
   play_container: {
     flex: 1,
-    alignItems: 'center',
     backgroundColor: colors.primary_background,
   },
 
   play_header: {
-    paddingVertical: 16,
-    paddingHorizontal: 20,
-    alignItems: 'center',
-    width: sizing.fullWidth,
-    backgroundColor: colors.primary_dark,
+    padding: spacing.lg,
+    backgroundColor: colors.primary_card,
     borderBottomWidth: sizing.borderWidth_subtle,
-    borderBottomColor: colors.overlay_light,
+    borderBottomColor: colors.border_card,
+    alignItems: 'center',
   },
 
   play_title: {
-    color: colors.neutral_white,
-    fontSize: fontSize.xl,
-    fontWeight: '600',
-    letterSpacing: 1,
+    color: colors.text_primary,
+    fontSize: fontSize.xxl,
+    fontFamily: 'Arvo_700Bold',
   },
 
-  play_button: {
-    backgroundColor: colors.primary_dark,
-    width: sizing.button_width,
-    paddingVertical: 16,
+  play_content: {
+    flex: 1,
+    alignItems: 'center',
+    paddingTop: spacing.xxl,
+  },
+
+  play_modeButton: {
+    backgroundColor: colors.primary_cardTransparent,
+    borderRadius: sizing.borderRadius_card,
+    borderWidth: sizing.borderWidth_standard,
+    borderColor: colors.accent_primary,
+    padding: spacing.xl,
+    marginHorizontal: spacing.lg,
+    marginBottom: spacing.md,
+    width: sizing.button_width_large,
+    alignItems: 'center',
+  },
+
+  play_modeTitle: {
+    color: colors.accent_primary,
+    fontSize: fontSize.lg,
+    fontFamily: fontFamily.bodySemiBold,
+    marginBottom: spacing.sm,
+  },
+
+  play_modeDescription: {
+    color: colors.text_secondary,
+    fontSize: fontSize.xs,
+    fontFamily: fontFamily.body,
+    textAlign: 'center',
+  },
+
+  play_footer: {
+    alignItems: 'center',
+    paddingBottom: spacing.xxl,
+  },
+
+  play_backButton: {
+    backgroundColor: colors.primary_card,
     borderRadius: sizing.borderRadius_button,
-    marginVertical: spacing.sm,
+    borderWidth: sizing.borderWidth_subtle,
+    borderColor: colors.border_card,
+    width: sizing.button_width,
+    height: sizing.button_height,
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: sizing.borderWidth_subtle,
-    borderColor: colors.border_subtle,
   },
 
-  play_buttonText: {
-    color: colors.neutral_white,
+  play_backButtonText: {
+    color: colors.text_primary,
     fontSize: fontSize.md,
-    fontWeight: '600',
-    letterSpacing: 0.5,
+    fontFamily: fontFamily.bodySemiBold,
   },
 });
 

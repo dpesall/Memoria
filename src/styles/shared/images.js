@@ -12,19 +12,19 @@ export const images = StyleSheet.create({
   logo_large: {
     width: sizing.logo_large,
     height: sizing.logo_large,
-    borderRadius: sizing.logo_large / 3,
+    borderRadius: sizing.borderRadius_card,
   },
 
   logo_medium: {
     width: sizing.logo_medium,
     height: sizing.logo_medium,
-    borderRadius: sizing.logo_medium / 3,
+    borderRadius: sizing.borderRadius_card,
   },
 
   logo_small: {
     width: sizing.logo_small,
     height: sizing.logo_small,
-    borderRadius: sizing.logo_small / 3,
+    borderRadius: sizing.borderRadius_icon,
   },
 
   icon_titleBar: {
@@ -32,7 +32,10 @@ export const images = StyleSheet.create({
     height: sizing.icon_size,
     resizeMode: 'contain',
     borderRadius: sizing.borderRadius_icon,
-    borderWidth: sizing.borderWidth_standard,
-    borderColor: colors.neutral_white,
+  },
+
+  icon_touchable: {
+    padding: 8,
+    borderRadius: sizing.borderRadius_icon,
   },
 });

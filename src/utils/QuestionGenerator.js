@@ -8,8 +8,8 @@ const shuffleArray = (array) => {
     return array;
 };
 
-const getRandomQuestion = (topic) => {
-    if (topic === 'Any') {
+const getRandomQuestion = (topic, minDifficulty = 1, maxDifficulty = 10) => {
+    if (topic === 'All') {
         const topics = Object.keys(questions);
         const randomTopic = topics[Math.floor(Math.random() * topics.length)];
         topic = randomTopic;
@@ -19,7 +19,12 @@ const getRandomQuestion = (topic) => {
         return { error: "Invalid topic" };
     }
 
-    const questionArray = questions[topic].questions;
+    const allQuestions = questions[topic].questions;
+    const filteredQuestions = allQuestions.filter(
+        q => q.difficulty >= minDifficulty && q.difficulty <= maxDifficulty
+    );
+
+    const questionArray = filteredQuestions.length > 0 ? filteredQuestions : allQuestions;
     const randomIndex = Math.floor(Math.random() * questionArray.length);
     const question = questionArray[randomIndex];
 
